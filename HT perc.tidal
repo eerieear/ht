@@ -1,0 +1,23 @@
+-- VARIATIONS
+d1
+  $ slow "0.5 1"$
+  -- s "{[bd_long*4]}"
+  s "{[bd_long bd_long*4][bd_long bd_long/2 bd_long][bd_long*8][bd_long*2 bd_long*3]}%8"
+  |+hpf 25  |+lpf 1060 |*gain"[0.8 0.6 0.4]"
+  -- s "{[bd*900]}"
+  -- |+ n "0 1 0 2 "
+  -- |+cut 1
+  |* shape 0.3
+  |*gain "0.9"
+  -- |+hpf "20"
+
+-- transition 2 to 3
+d1 $   slow "1"$
+  s "{[bd_long bd_long*4][bd_long bd_long/2 bd_long][bd_long*8][bd_long*2 bd_long*3]}%8"
+  |+hpf 25  |+lpf 1060 |*gain"[0.8 0.6 0.4]"
+  -- s "{[bd*900]}"
+  -- |+ n "0 1 0 2 "
+  |+cut 1
+  |* shape 0.5
+  |*gain "1.3"
+  |+hpf "20"

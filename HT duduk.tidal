@@ -1,0 +1,293 @@
+xfadeIn 1 4
+$slow 1.3
+$s"ht_metal*[3 4 1 2][8 12 1 2]"
+-- |+accelerate "[ 0.4 0.8 0.5]"
+|*speed (slow 1 $range 1 "[0.8 0.7 0.5]" (sine))
+|+pan 0.5
+|+lpf "[800 1490]"
+|+hpf 20
+|*shape 0.3
+|*gain 0.9
+
+
+-- d1
+xfadeIn 1 0.1
+$fast "[24 24 24 12][48 24 12 48][48 48 48 48][48 24 48 24]"
+-- $slow "32 34 35 27"
+-- $hurry "[0.8 -0.7]"
+-- $hurry "[2 1 2 4]"
+-- $chop "[128 124 128 [<132 148>]]"
+-- $striate' "[155 160]" "[0.6 0.5 0.7]"
+$ stack[s"~"
+,s"sd/[3 2 1 8]"
+-- ,s"ht_metal/[3 2 1 8]"
+-- ,slow 4 $s "bass3*[[16 8 4 8][24 16 32 12]]" |* speed 0.7 |+n"1" |*gain 0.8
+-- ,slow 4 $s "bass8*[16 8 4 8]" |* speed 0.7 |+n"1" |*gain 0.8
+-- ,s"ht_duduk_2:2/4" |*gain 0.2
+-- ,slow 4 $ s"clarinet_l:0"
+-- |* speed "[0.6 0.55 0.7]"
+-- |*speed 1 |*gain 0.2
+|+n "[0 1 2 0][4 2 5 6][c d ~ e*2]/2"
+]
+-- |+accelerate "[ 0.4 0.8 0.5]"
+|*speed (slow 1 $range 1 0.8 (sine))
+|+pan 0.5
+|+lpf "800 11900"
+|+hpf 20
+|*shape 0.3
+|*gain 0.9
+
+
+d1 $ s "bd"
+
+d1
+-- xfadeIn 1 8
+$slow "24 25 27"
+$hurry "[-0.8 -0.7]"
+$striate' 155 0.46
+$ stack[s"~"
+-- ,s "bass3" |* speed 0.3 |+n"-9"
+-- ,s"ht_duduk_2:3/2"
+-- ,slow 4 $ s"clarinet_l:0*4"
+-- |* speed "[0.6 0.55 0.7]"
+-- |*speed 3
+|+n "[0 1 2 0][4 2 5 6]"
+]
+|+accelerate "[ 0.4 0.8 0.5]"
+|+pan 0.5
+|+lpf "800 1900"
+|+hpf 20
+-- |*shape 0.3
+|*gain 0.6
+
+
+--ee_duduk
+xfadeIn 5 8
+$palindrome
+$slow "[4 2 4 1]"
+-- $chop "[24 12 24 28]"
+$stack[s"~"
+-- ,s "ht_duduk_0:4/2"
+,s "ht_duduk_2:4/3"
+-- ,s "ht_duduk_2:0/1"
+-- ,s "ht_duduk_2:2*2" |*n(run(8)) |+pan (slow 0.5 ((rand)*0.2))
+]
+|* speed (slow "2 4" $range 1.1 0.7 saw)
+-- |* speed (slow "2 4" $range 1.1 "[<0.7 0.72 0.69>]" sine) -- OPTION 3
+-- |* speed "[-0.4 1 0.5]"
+|* speed "[<1 1.2 1.3 1.4 0.8>]"
+-- |* speed "[0.2 0.3 0.2 0.4]"
+|* speed "[1 1 0.94 1]"
+-- |+ n "[< 0 1 2 0>][0 1 2 0][0,1 ~ ~ ~]"
+|* n "<3 4>"
+|+hpf "40"
+|+lpf "700"
+-- |+pan (slow 0.5 ((rand)*0.1))
+-- |*shape 0.3
+-- |*gain 1.3
+|*gain "0.7 0.6 0.5 0.45"
+
+
+////////////
+-- ee_duduk
+xfadeIn 5 8
+$palindrome
+$slow "[4 2 4 1]"
+-- $chop "[24 12 24 28]"
+$stack[s"~"
+-- ,s "ht_duduk_0:4/2"
+,s "ht_duduk_2:4/3"
+-- ,s "ht_duduk_2:0/1"
+-- ,s "ht_duduk_2:2*2" |*n(run(8)) |+pan (slow 0.5 ((rand)*0.2))
+]
+|* speed (slow "2 4" $range 1.1 0.7 saw)
+-- |* speed (slow "2 4" $range 1.1 "[<0.7 0.72 0.69>]" sine) -- OPTION 3
+-- |* speed "[-0.4 1 0.5]"
+|* speed "[<1 1.2 1.3 1.4 0.8>]"
+-- |* speed "[0.2 0.3 0.2 0.4]"
+|* speed "[1 1 0.94 1]"
+-- |+ n "[< 0 1 2 0>][0 1 2 0][0,1 ~ ~ ~]"
+|* n "<3 4>"
+|+hpf "40"
+|+lpf "700"
+-- |+pan (slow 0.5 ((rand)*0.1))
+-- |*shape 0.3
+-- |*gain 1.3
+|*gain "0.7 0.6 0.5 0.45"
+
+
+xfadeIn 5 8
+$palindrome
+$slow "[4 2 4 1]"
+-- $chop "[24 12 24 28]"
+$stack[s"~"
+-- ,s "ht_duduk_0:4/2"
+,s "ht_duduk_2:4/3"
+-- ,s "ht_duduk_2:0/1"
+-- ,s "ht_duduk_2:2*2" |*n(run(8)) |+pan (slow 0.5 ((rand)*0.2))
+]
+|* speed (slow "2 4" $range 1.1 0.7 saw)
+-- |* speed (slow "2 4" $range 1.1 "[<0.7 0.72 0.69>]" sine) -- OPTION 3
+-- |* speed "[-0.4 1 0.5]"
+|* speed "[<1 1.2 1.3 1.4 0.8>]"
+-- |* speed "[0.2 0.3 0.2 0.4]"
+|* speed "[1 1 0.94 1]"
+-- |+ n "[< 0 1 2 0>][0 1 2 0][0,1 ~ ~ ~]"
+|* n "<3 4>"
+|+hpf "40"
+|+lpf "700"
+-- |+pan (slow 0.5 ((rand)*0.1))
+-- |*shape 0.3
+-- |*gain 1.3
+|*gain "0.7 0.6 0.5 0.45"
+
+
+
+
+/////////////
+-- ee_duduk
+
+xfadeIn 5 8
+$palindrome
+$slow "[4 2 4 1]"
+-- $chop "[24 12 24 28]"
+$stack[s"~"
+-- ,s "ht_duduk_0:4/2"
+-- ,s "ht_duduk_2:4/3"
+-- ,s "ht_duduk_2:0/1"
+-- ,s "ht_duduk_2:2*2" |*n(run(8)) |+pan (slow 0.5 ((rand)*0.2))
+]
+|* speed (slow "2 4" $range 1.1 0.7 saw)
+-- |* speed (slow "2 4" $range 1.1 "[<0.7 0.72 0.69>]" sine) -- OPTION 3
+-- |* speed "[-0.4 1 0.5]"
+|* speed "[<1 1.2 1.3 1.4 0.8>]"
+|* speed "[0.2 0.3 0.2 0.4]"
+|* speed "[1 1 0.94 1]"
+-- |+ n "[< 0 1 2 0>][0 1 2 0][0,1 ~ ~ ~]"
+|* n "<3 4>"
+|+hpf "40"
+|+lpf "700"
+-- |+pan (slow 0.5 ((rand)*0.1))
+-- |*shape 0.3
+-- |*gain 1.3
+|*gain "0.7 0.6 0.5 0.45"
+
+
+
+xfadeIn 6 4
+-- $slow "[4 2 4 1]"
+$chop "[24 12 24 28]"
+$stack[s"~"
+-- ,s "ht_duduk_0:4/1"
+,s "ht_duduk_2:4/3"
+]
+|* speed (slow "2 4" $range 1.1 0.7 saw)
+-- |* speed (slow "2 4" $range 1.1 "[<0.7 0.72 0.69>]" sine) -- OPTION 3
+-- |* speed "[-4 1 0.5]"
+-- |* speed "[<1 1.2 1.3 1.4>]"
+|* speed "[0.2 0.3 0.2 0.4]"
+|* speed "[1 1 0.94 1]"
+|+ n "[< 0 1 2 0>][0 1 2 0][0,1 ~ ~ ~]"
+|* n "<3 4>"
+|+hpf "30"
+|*shape 0.4
+|*gain 0.8
+|*gain "0.7 0.6 0.5"
+
+
+xfadeIn 5 8
+$palindrome
+$slow "[4 2 4 1]"
+-- $chop "[24 12 24 28]"
+$stack[s"~"
+-- ,s "ht_duduk_0:4/1"
+,s "ht_duduk_2:4/3"
+,s "ht_duduk_2:0/1"
+,s "ht_duduk_2:2*2" |*n(run(8)) |+pan (slow 0.5 ((rand)*0.2))
+]
+|* speed (slow "2 4" $range 1.1 0.7 saw)
+-- |* speed (slow "2 4" $range 1.1 "[<0.7 0.72 0.69>]" sine) -- OPTION 3
+-- |* speed "[-0.4 1 0.5]"
+|* speed "[<1 1.2 1.3 1.4 0.8>]"
+-- |* speed "[0.2 0.3 0.2 0.4]"
+|* speed "[1 1 0.94 1]"
+-- |+ n "[< 0 1 2 0>][0 1 2 0][0,1 ~ ~ ~]"
+|* n "<3 4>"
+|+hpf "60"
+|+pan (slow 0.5 ((rand)*0.1))
+|*shape 0.3
+|*gain 1.3
+|*gain "0.7 0.6 0.5 0.45"
+
+////////////
+
+xfadeIn 5 8
+$slow "[4 2 4 1]"
+$chop "[24 12 24 28]"
+$ s "ht_duduk_0:4/1"
+-- |* speed (slow "2 4" $range 1.1 0.7 saw)
+|* speed (slow "2 4" $range 1.1 "[<0.7 0.72 0.69>]" sine) -- OPTION 3
+-- |* speed "[-2 1 0.5]"
+|* speed "[0.2 0.3 0.2 0.4]"
+|* speed "[1 1 0.94 1]"
+-- |+ n "[< 0 1 2 0 >]"
+|* n "<3 4>"
+|+hpf "60"
+|*shape 0.2
+|*gain 1.2
+|*gain "0.7 0.6 0.5"
+
+
+xfadeIn 4 8
+-- $slow "[4 2 4 1]"
+$chop "[24 12 24 28]"
+$ s "ht_duduk_0:1/2"
+|* speed (slow "2 4" $range 1.1 0.7 saw)
+-- |* speed (slow "2 4" $range 1.1 "[<0.7 0.72 0.69>]" sine) -- OPTION 3
+|* speed "[-2 1 0.5]"
+|* speed "[0.2 0.3 0.2 0.4]"
+|* speed "[1 1 0.94 1]"
+|+ n "[< 0 1 2 0 >]"
+|* n 3
+|+hpf "60"
+|*shape 0.2
+|*gain "0.8"
+
+
+d3
+$slow "[4 2 4 1]"
+$chop "[24 12]"
+$ s "ht_duduk_0/8"
+-- |* speed (slow "2 4" $range 1.1 0.7 saw)
+-- |* speed (slow "2 4" $range 1.1 "[<0.7 0.72 0.69>]" sine) -- OPTION 3
+-- |* speed "[-2 1 0.5]"
+-- |+ n "[< 0 1 2 0 >]"
+|+hpf "60"
+-- |*shape 0.2
+|*gain "0.65"
+
+
+d2
+-- $chop 24
+$ s "ht_duduk_0/3"
+-- |* speed (slow "2 4" $range 1.1 0.7 sine)
+|* speed (slow "2 4" $range 1.1 "[<0.7 0.72 0.69>]" sine) -- OPTION 3
+|* speed "[-1]"
+|+ n "[< 0 >]"
+|+hpf "60"
+|+lpf "8000"
+-- |*shape 0.2
+|*gain "0.65"
+
+
+
+d1
+-- $chop 24
+$ s "ht_duduk_0/4"
+-- |* speed (slow "2 4" $range 1.1 0.7 sine)
+-- |* speed (slow "2 4" $range 1.1 "[<0.7 0.72 0.69>]" sine) -- OPTION 3
+|* speed "[-1]"
+|+ n "[< 0 >]"
+|+hpf "60"
+-- |*shape 0.2
+|*gain "0.65"

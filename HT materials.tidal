@@ -1,0 +1,205 @@
+-- 200214
+
+
+
+d1
+$slow 4
+$ s "bd_long*[24 22 16 8 4]"
+-- |+n "[1 2 3 ]"
+
+
+-- reverse for end of part 2  and walking  in part 3 to 4
+d1
+$slow 3
+$hurry "[-0.8 -0.6]"
+$ stack[s"~"
+-- ,s "bass3" |* speed 0.3 |+n"-9"
+,s"rd/1" |* speed "[0.2 0.3 0.4]"|+n "[0 1 2 0][4 2 5 6]"
+]
+|+accelerate "[ 0.4 0.8 0.5]"
+|+pan 0.5
+|+lpf "200 300"
+|*shape 0.3
+|*gain 1
+
+d1
+$slow 3
+$s "bd_long"
+|*speed "-0.8"
+
+
+d1 $s "bd_long"
+|*speed "1"
+
+--200127
+
+
+xfadeIn 1 4
+$slow "{[1.17]}"
+-- $fast 240
+-- $fast "[3 6 3][3 3 4 19]"
+$degradeBy "{[0.6 0.4 0.1][0.1 0.2 0.4]}%8"
+$ stack[s"~"
+-- ,s"[bd][bd][bd][bd][bd][bd][bd][bd]"
+-- ,s"[<bass8 bass8*2 bass8>][bass8][bass8][bass8][bass8][bass8][bass8][bass8]"
+-- ,s"[<bass8 bass8*2 bass8>][bass8][bass8][bass8]"
+-- |+n "[e3]" |*gain "[1 1 0.8 0.7 0.6 0.5 0.4 0.3]" |*shape 0.3
+-- ,s"[bd][bd][bd][bd][bd][bd][bd][bd]" |+n "[0 1 2 3 4 5 6 7]" |*n 8 --- |*gain "[1 1 0.8 0.7 0.6 0.5 0.4 0.3]"
+-- ,s"[bd][bd][bd][bd][bd][bd][bd][bd]" |+n "[0 1 2 3 4 5 6 7]" |*gain "[1 1 0.8 0.7 0.6 0.5 0.4 0.3]"
+-- ,s"[bd][bd][bd][bd][bd][bd][bd][[<bd*2 bd bd bd>]]"
+,s"[~][~][~][~][~][~][~][~]"
+]
+|+legato 2
+#gain 0.7
+
+
+d1
+$slow 1.17
+$ stack[s"~"
+-- ,s"[bd][bd][bd][bd][bd][bd][bd][bd]"
+,s"[<bass8 bass8*2 bass8>][bass8][bass8][bass8][bass8][bass8][bass8][bass8]"
+,s"[<bass8 bass8*2 bass8>][bass8][bass8][bass8]"
+|+n "[e3]" |*gain "[1 1 0.8 0.7 0.6 0.5 0.4 0.3]" |*shape 0.3
+,s"[bd][bd][bd][bd][bd][bd][bd][bd]" |+n "[0 1 2 3 4 5 6 7]" |*n 8 |*gain "[1 1 0.8 0.7 0.6 0.5 0.4 0.3]"
+,s"[bd][bd][bd][bd][bd][bd][bd][bd]" |+n "[0 1 2 3 4 5 6 7]" |*gain "[1 1 0.8 0.7 0.6 0.5 0.4 0.3]"
+,s"[bd][bd][bd][bd][bd][bd][bd][[<bd*2 bd bd bd>]]"
+,s"[~][~][~][~][~][~][~][~]"
+]
+|+legato 4
+#gain 0.7
+
+d1
+$slow 2.5
+$stack[s"~"
+,s"kemence_beat"
+,s"bd_long*2"
+-- ,s"[tabla*8]/2"|+n "[0 1 2 3 4 5 6 7]" |* speed "0.25"
+]
+
+
+d1
+$slow 8
+$s"KemenceLo*4"
+|+n "0 1 2"
+
+
+d1
+$s"KemenceLo"
+
+
+-- d1
+xfadeIn 1 8
+-- $slow 16
+$palindrome
+$slow 4
+-- $striate 48
+-- $striate' 16 0.5
+$chop 32
+$ s "~"
+|+ n "[0 1 2 3 4 5 6 5]"
+-- |*n 1
+|* speed (slow "<4 8>" $range 0.6 0.4 sine)
+-- |* speed (slow "2 4" $range 1.1 "[<0.7 0.72 0.69>]" sine) -- OPTION 3
+-- |* speed "1.25"
+|+legato 6
+|+hpf "280" |+lpf 10000
+|*shape 0.1
+|*gain "0.8"
+
+
+
+xfadeIn 1 4
+-- $slow 24
+-- $striate' 160 0.5
+-- $chop 28
+-- $hurry "[0.5 1 -2 1][[4,0.5] 1 2 1]"
+-- $hurry 0.5
+-- $hurry "1.2 1.4"
+$s "kemence_long/2"
+|+ n " [0 1 2] [0 4]"
+|+accelerate (slow 4 $range 1 0.2 saw)
+|+begin "0.34"
+-- |*speed "1 -1 4 0.5"
+-- |*speed (slow 16 $range 0.8 0.3 saw)
+|* gain 1
+
+-- 200124
+
+
+-- d1
+xfadeIn 1 8
+$slow 8
+$striate 16
+-- $chop 32
+$ s "kkemence_long*3"
+|+ n "[0 1 2 3 4 5 6 5]"
+-- |*n 2
+-- |* speed (slow "<4 8>" $range 0.6 0.4 sine)
+-- |* speed (slow "2 4" $range 1.1 "[<0.7 0.72 0.69>]" sine) -- OPTION 3
+-- |* speed "1.25"
+|+legato 6
+|+hpf "280" |+lpf 10000
+-- |*shape 0.1
+|*gain "0.8"
+
+d1 -- NOT WORKING
+$slow 500
+$chop 16
+$striate' 40 2
+$ s "kemence_long*3"
+|+ n "[0 1 2 3 0 2 1 0]"
+-- |* speed (slow "4 8" $range 0.6 0.7 sine)
+-- |* speed (slow "2 4" $range 1.1 "[<0.7 0.72 0.69>]" sine) -- OPTION 3
+-- |* speed "0.71"
+|+legato 8
+|+hpf "680" |+lpf 6000
+|*shape 0.3
+|*gain "1.6"
+
+d1 $slow 2 $ s "bd_long bd_long/2"
+-- |*  speed (slow 2 $range 1.1 0.7 sine)
+-- |+hpf "20"
+|*gain "0.9"
+
+
+d1 $slow 2 $ s "bd_long bd_long/2"
+-- |*  speed (slow 2 $range 1.1 0.7 sine)
+-- |+hpf "20"
+|*gain "0.9"
+
+
+d1 -- IRREGULAR BASS DRUM
+  $ slow "4"$ -- KEEP SLOW 4
+  s "{[bd_long bd_long*4][bd_long bd_long/2 bd_long][bd_long*8][bd_long*2 bd_long*3]}%2" |+hpf 25  |+lpf 160 |*gain"[0.8 0.6 0.4]" |*gain 0.8
+  -- |+ n "0 1 0 2 "
+  -- |+cut 1
+  |*gain "0.8"
+  -- |+hpf "80"
+
+-- GLITCHES for transtion between pt 4 & 5
+d1 $ s "turk"
+-- |* speed (slow "2 4" $range 1.1 0.7 sine)
+|* speed (slow "2 4" $range 1.1 "[<0.7 0.72 0.69>]" sine) -- OPTION 3
+|* speed "-1"
+|*shape 0.2
+|*gain "0.75"
+
+
+
+d1 $ s "turk"
+-- |+cut 1
+-- |+ begin "0.2 0.25"
+-- |+ end "0.45 0.55 0.65"
+-- |*  speed (slow 2 $range 1.1 0.7 sine)
+|*shape 0.2
+|*gain "0.75"
+
+
+-- |+hpf "80"
+
+d1 $   slow "3"$ -- values between 700 and 1000 --slow 3 * 1000 (gives pain)
+    -- s "{[bd*900]}"
+    s "{[bd*1000]}"
+    |+cut 1
+    |*gain "0.7"
+    |+hpf "80"

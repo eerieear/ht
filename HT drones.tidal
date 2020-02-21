@@ -1,0 +1,26 @@
+
+
+
+d1
+-- $chop 24
+$ s "padlong/2"
+-- |* speed (slow "2 4" $range 1.1 0.7 sine)
+-- |* speed (slow "2 4" $range 1.1 "[<0.7 0.72 0.69>]" sine) -- OPTION 3
+|+speed "0.4"
+|* speed "[-1]"
+|+ n "[< 1 2>]"
+|+hpf "60"
+-- |*shape 0.2
+|*gain "0.85"
+
+d1
+-- $chop 24
+$ s "ht_duduk_1/2"
+-- |* speed (slow "2 4" $range 1.1 0.7 sine)
+-- |* speed (slow "2 4" $range 1.1 "[<0.7 0.72 0.69>]" sine) -- OPTION 3
+|+speed "0.4"
+|* speed "[-1]"
+|+ n "[< 1 2>]"
+|+hpf "60"
+-- |*shape 0.2
+|*gain "0.65"
